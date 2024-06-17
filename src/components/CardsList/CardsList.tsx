@@ -1,15 +1,20 @@
 import './CardsList.css'
 import FilmCard from '../FilmCard/FilmCard.tsx'
+import filmsData from '../../data/films.json'
+import { Film } from '../../types/film.ts'
 
 
 
-type Props = {}
+type CardsListProps = {
+  films: Film[];
+};
 
-export default function CardsList({}: Props) {
+export default function CardsList({ films }: CardsListProps) {
   return (
     <div>
-        CardsList
-        <FilmCard />
+      {filmsData.films.map((film) => (
+        <FilmCard film={film} key={film.id} />
+      ))}
     </div>
-  )
+  );
 }
