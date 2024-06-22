@@ -9,7 +9,7 @@ type CardsListProps = {
   films: Film[];
 };
 
-export default function CardsList({ films }: CardsListProps) {
+export default function CardsList({}: CardsListProps) {
   return (
     <div>
       {filmsData.films.map((film) => (
